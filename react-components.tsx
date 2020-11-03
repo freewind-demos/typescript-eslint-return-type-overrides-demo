@@ -1,11 +1,7 @@
 /* global console */
 import React from 'react';
 
-type Props = {
-  onChange: () => string
-}
-
-const MyComponent: React.FC<Props> = (props) => {
+export const MyComponent: React.FC = (props) => {
   // good: no "return type" lint error
   // allowTypedFunctionExpressions: true
   [1, 2, 3].filter(it => it > 1)
@@ -13,7 +9,7 @@ const MyComponent: React.FC<Props> = (props) => {
   return <button onClick={
     // !!! has "return type" lint error
     // have to enable: 'allowExpressions: true' ?
-    () => console.log('clicked')
+    () => 'sss'
   }>Button</button>
 }
 
